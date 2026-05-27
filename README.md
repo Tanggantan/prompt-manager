@@ -57,6 +57,10 @@ npm install
 npm start
 ```
 
+## 创建桌面快捷方式
+
+双击 `create-shortcut.bat`，自动检测项目所在目录并在桌面生成 `PromptManager` 快捷方式，之后双击快捷方式即可直接启动应用，无需手动打开终端。
+
 ## 使用说明
 
 ### 创建模板

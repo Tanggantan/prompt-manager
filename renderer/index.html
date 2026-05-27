@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'">
+  <title>Prompt 模板管理器</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- 顶部栏 -->
+    <header class="header">
+      <h1 class="header-title">Prompt 模板管理器</h1>
+      <button class="btn btn-primary" id="btn-add">+ 新增模板</button>
+    </header>
+
+    <!-- 搜索与筛选 -->
+    <div class="toolbar">
+      <input type="text" class="search-input" id="search-input" placeholder="搜索模板标题或内容...">
+      <div class="tags-filter" id="tags-filter"></div>
+    </div>
+
+    <!-- 模板列表 -->
+    <main class="template-list" id="template-list"></main>
+
+    <!-- 空状态 -->
+    <div class="empty-state" id="empty-state" style="display:none;">
+      <p>还没有模板，点击「+ 新增模板」开始创建</p>
+    </div>
+  </div>
+
+  <!-- 编辑弹窗 -->
+  <div class="modal-overlay" id="modal-overlay" style="display:none;">
+    <div class="modal">
+      <h2 class="modal-title" id="modal-title">新增模板</h2>
+      <form id="template-form">
+        <label class="form-label">标题</label>
+        <input type="text" class="form-input" id="form-title" required placeholder="输入模板标题">
+
+        <label class="form-label">内容</label>
+        <textarea class="form-textarea" id="form-content" required placeholder="输入 Prompt 模板内容..."></textarea>
+
+        <label class="form-label">标签 <span class="form-hint">（用逗号分隔）</span></label>
+        <input type="text" class="form-input" id="form-tags" placeholder="例如：翻译,写作,代码">
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" id="btn-cancel">取消</button>
+          <button type="submit" class="btn btn-primary" id="btn-save">保存</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 复制成功提示 -->
+  <div class="toast" id="toast">已复制到剪贴板</div>
+
+  <script src="app.js"></script>
+</body>
+</html>

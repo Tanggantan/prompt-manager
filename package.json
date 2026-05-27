@@ -1,0 +1,12 @@
+{
+  "name": "prompt-manager",
+  "version": "1.0.0",
+  "description": "Prompt模板管理器",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^35.0.0"
+  }
+}
